@@ -11,7 +11,8 @@ const Logo = styled.img``;
 
 const Header = styled.div`
   text-align: center;
-  margin-bottom: 16px;
+  max-width: 180px;
+  margin: 15px auto;
 `;
 
 export default () =>

@@ -7,16 +7,16 @@ export default (label) => {
 
   useEffect(() => {
     // GitHub rate limiting: 60 requests per hour/unauthenticated - fetches 15 times per hour / sending 30 requests (2 requests per fetch) and caches in localStorage
-    if (
+    /*if (
       new Date(localStorage.getItem(`issueStatusLastFetch${label}`)) <
       new Date() - 240000
-    ) {
-      fetchData(setLoading, setError, setResults, label);
-    } else {
+    ) {*/
+    fetchData(setLoading, setError, setResults, label);
+    /*} else {
       setResults(JSON.parse(localStorage.getItem(`issueStatus${label}`)));
       setLoading(false);
       setError();
-    }
+    }*/
   }, [label]);
 
   return [

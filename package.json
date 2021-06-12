@@ -17,12 +17,15 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
+    "run": "npm run build;serve -s build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "release:staging": "npm run build; aws s3 sync --acl public-read --profile test --delete build/ s3://status.handpoint.io",
+    "release:production": "npm run build; aws s3 sync --acl public-read --profile production --delete build/ s3://status.handpoint.com"
   },
   "eslintConfig": {
     "extends": "react-app"
